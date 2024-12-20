@@ -1,0 +1,38 @@
+@import '../../main';
+
+.mainWrapper {
+    header {
+        padding: 1rem;
+        color: #333
+    }
+}
+
+.main__content {
+    padding: 0 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .mainWrapper {
+        header {
+            padding: 0.5rem 1rem;
+            text-align: center;
+        }
+    }
+    
+    .main__content {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .mainWrapper {
+        header {
+            padding: 0.5rem 0;
+            font-size: 0.8rem;
+        }
+    }
+    
+    .main__content {
+        padding: 0 0.5rem;
+    }
+}

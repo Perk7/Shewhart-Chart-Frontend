@@ -1,0 +1,194 @@
+@import '../../../main.scss';
+
+.menuBlock {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.fileSelectBlock {
+    @extend .button;
+    display: inline-block;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    width: 13rem;
+    text-align: center;
+
+    input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        display: block;
+        width: 0;
+        height: 0;
+    }
+
+}
+
+.fileResetBtn {
+    @extend .button;
+    background-color: #810e0e;
+    padding: 0.75rem 1.5rem;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.errorLabel {
+    color: #e72d2d;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.createBtn {
+    @extend .button;
+    padding: 0.8rem 0;
+    font-size: 1rem;
+    margin-top: 1rem;
+    width: 13rem;
+    text-align: center;
+}
+
+.quantityForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+
+    .tableSizeLabel {
+        margin-bottom: 0.5rem;
+
+        span {
+            display: inline-block;
+            font-weight: 600;
+            width: 14rem;
+        }
+
+        input {
+            width: 4rem;
+            font-size: 1.5rem;
+            border: 0;
+            border-bottom: 2px solid #000;
+
+            &.errorSize {
+                color: #e72d2d;
+            }
+        }
+    }
+}
+
+.tableBlock {
+    @extend .scrollbar;
+    overflow: auto;
+
+    max-height: calc(100dvh - 10rem);
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .menuBlock {
+        grid-template-columns: 40% 60%;
+    }
+    
+    .quantityForm {
+        .tableSizeLabel {
+            input {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 916px) {
+    .menuBlock {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(1fr);
+    }
+
+    .buttonBlock {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .quantityForm {
+        margin-top: 1rem;
+    }
+
+    .tableBlock {
+        margin-top: 3rem;
+    }
+
+}
+
+@media screen and (max-width: 580px) {
+    .buttonBlock {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .customTableBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quantityForm {
+        .tableSizeLabel {
+            span {
+                margin-left: 2rem;
+            }
+
+            input {
+                width: 3rem;
+            }
+        }
+    }
+
+    .fileResetBtn {
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .fileSelectBlock {
+        font-size: 0.8rem;
+        width: 10rem;
+    }
+    
+    .fileResetBtn {
+        font-size: 0.8rem;
+    }
+    
+    .errorLabel {
+        width: 10rem;
+        text-align: center;
+    }
+    
+    .createBtn {
+        font-size: 0.8rem;
+        width: 10rem;
+    }
+    
+    .quantityForm {
+        margin-top: 2rem;
+    
+        .tableSizeLabel {
+            span {
+                font-size: 0.8rem;
+                width: 12rem;
+            }
+    
+            input {
+                width: 3rem;
+                font-size: 1.25rem;
+            }
+        }
+    }
+    
+    .tableBlock {
+        max-height: calc(100dvh - 20rem);
+    }
+}

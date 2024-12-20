@@ -1,0 +1,215 @@
+@import '../../../../main.scss';
+
+.modalWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: calc(100vh - 6rem);
+    background-color: #000A;
+    display: flex;
+    justify-content: center;
+    padding-top: 6rem;
+}
+
+.modalBlock {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75rem;
+    height: 42rem;
+
+    background-color: #fff;
+    padding: 1rem 2rem;
+    width: calc(60% - 4rem);
+}
+
+.modalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        @extend .button;
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+.gridModalWrapper {
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    grid-template-rows: 16rem 16rem 5rem;
+
+    h3 {
+        font-size: 1.25rem;
+        margin: 0;
+        padding: 1rem 0;
+        border-top: 3px solid #888;
+    }
+
+    select {
+        padding: 0.5rem 1rem;
+        background-color: $button-bg;
+        color: #FFF;
+        border-radius: 0.3rem;
+        font-weight: 600;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .checkboxLabel {
+        display: flex;
+        justify-content: center;
+        width: 8rem;
+
+        border-radius: 0.3rem;
+        border: 2px solid $button-bg;
+        margin-top: 0.5rem;
+        padding: 0.5rem 0;
+
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: $button-bg;
+
+        transition: .5s;
+
+        input {
+            display: none;
+        }
+
+        &:has(input:checked) {
+            background-color: $button-bg;
+            color: #FFF;
+        }
+    }
+
+    .radioLabel {
+        display: flex;
+        justify-content: center;
+        width: 8rem;
+
+        border-radius: 0.3rem;
+        border: 2px solid $button-bg;
+        margin-top: 0.5rem;
+        padding: 0.5rem 0;
+
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: $button-bg;
+
+        transition: .5s;
+
+        input {
+            display: none;
+        }
+
+        &:has(input:checked) {
+            background-color: $button-bg;
+            color: #FFF;
+        }
+    }
+
+    .textLabel {
+        display: flex;
+        margin-top: 1rem;
+        align-items: center;
+
+        span {
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        input {
+            display: inline;
+            font-size: 1.25rem;
+            border: 0;
+            margin-left: 0.5rem;
+            width: 6rem;
+            border-bottom: 2px solid #000;
+
+            &.error {
+                color: #e72d2d;
+            }
+        }
+    }
+
+    .createButton {
+        display: flex;
+        justify-content: center;
+        border-top: 3px solid #888;
+        padding-top: 1rem;
+        grid-column: 1/4;
+
+        button {
+            @extend .button;
+            padding: 1rem 6rem;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .modalBlock {
+        width: calc(80% - 4rem);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .modalBlock {
+        width: calc(95% - 4rem);
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .modalWrapper {
+        min-height: calc(100vh - 8rem);
+        padding: 4rem 0;
+    }
+
+    .modalBlock {
+        width: calc(100% - 4rem);
+        height: auto;
+        border-radius: 0;
+    }
+    
+    .gridModalWrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 11rem 18rem 18rem;
+
+        .createButton {
+            grid-column: 1/3;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 510px) {
+    .modalWrapper {
+        padding: 0;
+    }
+
+    .modalBlock {
+        width: calc(100% - 2rem);
+        padding: 1rem;
+    }
+    
+    .gridModalWrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 8rem 10rem 16rem 8rem 15rem 15rem 6rem;
+
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .createButton {
+            grid-column: 1;
+        }
+    }
+
+}

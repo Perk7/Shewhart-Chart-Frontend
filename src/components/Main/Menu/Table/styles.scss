@@ -1,0 +1,15 @@
+@import '../../../../main.scss';
+
+@import '@silevis/reactgrid/styles.scss';
+
+.rg-cell {
+    background-color: rgb(207, 207, 207) !important;
+}
+
+.rg-header-cell {
+    background-color: rgb(108, 153, 173) !important;
+}
+
+.reactgrid-content .rg-pane .rg-cell.rg-checkbox-cell label input:checked ~ span {
+    background-color: $button-bg !important;
+}
